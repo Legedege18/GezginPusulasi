@@ -1,0 +1,283 @@
+/* === GENEL AYARLAR VE RESETLEME === */
+:root {
+    --primary-color: #007bff;
+    --dark-color: #333;
+    --light-color: #f4f7f6;
+    --white-color: #fff;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; margin-bottom: 25px; border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; }
+h3 { font-size: 1.25rem; }
+
+/* === HEADER / NAVİGASYON === */
+header {
+    background: var(--white-color);
+    box-shadow: var(--shadow);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.desktop-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.desktop-nav li {
+    margin-left: 25px;
+}
+
+.desktop-nav a {
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobil Menü Ayarları */
+.burger-menu {
+    display: none; /* Masaüstünde gizli */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--dark-color);
+}
+
+.mobile-nav {
+    display: none; /* Başlangıçta gizli */
+    flex-direction: column;
+    background: var(--white-color);
+    position: sticky;
+    top: 76px; /* Header yüksekliği kadar */
+    width: 100%;
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav a:hover {
+    background: var(--light-color);
+    color: var(--primary-color);
+}
+
+/* === HERO BÖLÜMÜ === */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
+    text-align: center;
+    padding: 6rem 1.5rem;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* === EDİTÖRÜN SEÇİMLERİ === */
+.featured {
+    margin-bottom: 40px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.featured-item {
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    text-align: center;
+    color: var(--dark-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.featured-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.featured-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* === KATEGORİLER VE ARAÇ KARTLARI === */
+.category-section {
+    margin-bottom: 40px;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.tool-card {
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.tool-card-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 15px;
+    background: #eee;
+}
+
+.tool-card p {
+    padding: 0 20px 20px 20px;
+    flex-grow: 1;
+    color: #555;
+}
+
+.tool-card-footer {
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: right;
+    border-top: 1px solid #eee;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.btn i {
+    margin-left: 5px;
+}
+
+/* === FOOTER === */
+footer {
+    background: var(--dark-color);
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 40px;
+}
+
+/* === RESPONSIVE (DUYARLILIK) AYARLARI === */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .desktop-nav {
+        display: none; /* Mobil ve tablette gizle */
+    }
+    
+    .burger-menu {
+        display: block; /* Mobil ve tablette göster */
+    }
+    
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+}
